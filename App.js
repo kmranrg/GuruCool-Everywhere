@@ -5,11 +5,13 @@ import Card from "./components/Card";
 import Course from "./components/Course";
 import { NotificationIcon } from "./components/Icons";
 import Logo from "./components/Logo";
+import Menu from "./components/Menu";
 
 export default class App extends React.Component {
   render() {
     return (
       <Container>
+        <Menu />
         <SafeAreaView>
           <ScrollView style={{ height: "100%" }}>
             <TitleBar>
@@ -53,7 +55,7 @@ export default class App extends React.Component {
             </ScrollView>
             <Subtitle>Popular Courses</Subtitle>
             {courses.map((course, index) => (
-              <Course 
+              <Course
                 key={index}
                 image={course.image}
                 title={course.title}
@@ -64,7 +66,6 @@ export default class App extends React.Component {
                 caption={course.caption}
               />
             ))}
-            
           </ScrollView>
         </SafeAreaView>
       </Container>
@@ -181,7 +182,7 @@ const courses = [
     logo: require("./assets/logo-studio.png"),
     author: "Kumar Anurag",
     avatar: require("./assets/avatar.jpg"),
-    caption: "Design and Interactive Prototype"
+    caption: "Design and Interactive Prototype",
   },
   {
     title: "React for Designers",
@@ -190,7 +191,7 @@ const courses = [
     logo: require("./assets/logo-react.png"),
     author: "Kumar Anurag",
     avatar: require("./assets/avatar.jpg"),
-    caption: "Learn to design and code a React site"
+    caption: "Learn to design and code a React site",
   },
   {
     title: "Design and Code with Framer X",
@@ -199,7 +200,7 @@ const courses = [
     logo: require("./assets/logo-framerx.png"),
     author: "Kumar Anurag",
     avatar: require("./assets/avatar.jpg"),
-    caption: "Create powerful design and code components for your app"
+    caption: "Create powerful design and code components for your app",
   },
   {
     title: "Design System in Figma",
@@ -208,6 +209,7 @@ const courses = [
     logo: require("./assets/logo-figma.png"),
     author: "Kumar Anurag",
     avatar: require("./assets/avatar.jpg"),
-    caption: "Complete guide to designing a site under a collaborative design tool"
-  }
-]
+    caption:
+      "Complete guide to designing a site under a collaborative design tool",
+  },
+];

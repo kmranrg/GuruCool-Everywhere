@@ -52,27 +52,27 @@ const Logo = styled.Image`
 `;
 
 const Title = styled.Text`
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
-    margin-top: 4px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    width: 170px;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  width: 170px;
 `;
 
 const Subtitle = styled.Text`
-    font-size: 15px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.8);
-    text-transform: uppercase;
-    margin-left: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  margin-left: 20px;
 `;
 
 const Content = styled.View`
-    padding-left: 62px;
-    justify-content: center;
-    height: 75px;
+  padding-left: 62px;
+  justify-content: center;
+  height: 75px;
 `;
 
 const Avatar = styled.Image`
@@ -85,14 +85,14 @@ const Avatar = styled.Image`
 `;
 
 const Caption = styled.Text`
-    font-size: 14px;
-    color: #3c4560;
-    font-weight: 500;
+  font-size: 14px;
+  color: #3c4560;
+  font-weight: 500;
 `;
 
 const Author = styled.Text`
-    font-size: 13px;
-    color: #b8bece;
-    font-weight: 500;
-    margin-top: 4px;
+  font-size: 13px;
+  color: #b8bece;
+  font-weight: 500;
+  margin-top: 4px;
 `;
