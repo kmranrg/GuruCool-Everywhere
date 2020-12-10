@@ -115,7 +115,7 @@ const Logo = styled.Image`
 const Subtitle = styled.Text`
   font-size: 15px;
   font-weight: bold;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   margin-left: 5px;
   text-transform: uppercase;
 `;
