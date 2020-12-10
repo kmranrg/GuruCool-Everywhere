@@ -6,6 +6,7 @@ import {
   Animated,
   Easing,
   StatusBar,
+  Platform,
 } from "react-native";
 import styled from "styled-components";
 import Card from "../components/Card";
@@ -46,6 +47,7 @@ const CardsQuery = gql`
           width
           height
         }
+        content
       }
     }
   }
@@ -76,6 +78,8 @@ class HomeScreen extends React.Component {
 
   componentDidMount() {
     StatusBar.setBarStyle("dark-content", true);
+
+    if (Platform.OS == "android") StatusBar.setBarStyle("light-content", true);
   }
 
   componentDidUpdate() {
@@ -162,7 +166,7 @@ class HomeScreen extends React.Component {
                 <Query query={CardsQuery}>
                   {({ loading, error, data }) => {
                     if (loading) return <Message>Loading...</Message>;
-                    if (error) return <Message>Error...</Message>
+                    if (error) return <Message>Error...</Message>;
 
                     console.log(data.cardsCollection.items);
 
@@ -183,6 +187,7 @@ class HomeScreen extends React.Component {
                               caption={card.caption}
                               logo={card.logo}
                               subtitle={card.subtitle}
+                              content={card.content}
                             />
                           </TouchableOpacity>
                         ))}
@@ -192,18 +197,20 @@ class HomeScreen extends React.Component {
                 </Query>
               </ScrollView>
               <Subtitle>Popular Courses</Subtitle>
-              {courses.map((course, index) => (
-                <Course
-                  key={index}
-                  image={course.image}
-                  title={course.title}
-                  subtitle={course.subtitle}
-                  logo={course.logo}
-                  author={course.author}
-                  avatar={course.avatar}
-                  caption={course.caption}
-                />
-              ))}
+              <CoursesContainer>
+                {courses.map((course, index) => (
+                  <Course
+                    key={index}
+                    image={course.image}
+                    title={course.title}
+                    subtitle={course.subtitle}
+                    logo={course.logo}
+                    author={course.author}
+                    avatar={course.avatar}
+                    caption={course.caption}
+                  />
+                ))}
+              </CoursesContainer>
             </ScrollView>
           </SafeAreaView>
         </AnimatedContainer>
@@ -214,6 +221,12 @@ class HomeScreen extends React.Component {
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
 
+const CoursesContainer = styled.View`
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 10px;
+`;
+
 const Message = styled.Text`
   margin: 20px;
   color: #b8bece;
@@ -223,6 +236,7 @@ const Message = styled.Text`
 
 const CardsContainer = styled.View`
   flex-direction: row;
+  padding-left: 10px;
 `;
 
 const RootView = styled.View`
