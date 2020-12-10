@@ -46,6 +46,7 @@ const CardsQuery = gql`
           width
           height
         }
+        content
       }
     }
   }
@@ -183,6 +184,7 @@ class HomeScreen extends React.Component {
                               caption={card.caption}
                               logo={card.logo}
                               subtitle={card.subtitle}
+                              content={card.content}
                             />
                           </TouchableOpacity>
                         ))}
