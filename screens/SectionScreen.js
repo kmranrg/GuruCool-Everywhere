@@ -29,9 +29,9 @@ class SectionScreen extends React.Component {
         <Container>
           <StatusBar hidden />
           <Cover>
-            <Image source={section.image} />
+            <Image source={{ uri: section.image.url }} />
             <Wrapper>
-              <Logo source={section.logo} />
+            <Logo source={{ uri: section.logo.url }} />
               <Subtitle>{section.subtitle}</Subtitle>
             </Wrapper>
             <Title>{section.title}</Title>
@@ -144,7 +144,7 @@ const htmlStyles = `
 `;
 
 const Content = styled.View`
-  height: 1000px;
+  height: 900px;
   padding: 20px;
 `;
 
